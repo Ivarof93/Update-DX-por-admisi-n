@@ -1,0 +1,13 @@
+UPDATE mServicios
+SET CodDXPpal = 
+    CASE 
+        WHEN IdAdmision = 22556495 THEN 'Z124'
+        WHEN IdAdmision = 22556507 THEN 'Z124'
+        WHEN IdAdmision = 22556617 THEN 'Z308'
+        -- Agrega más casos para las demás combinaciones de admisión y diagnóstico aquí
+        ELSE CodDXPpal  -- Mantenemos el valor actual si no hay coincidencia
+    END
+WHERE IdAdmision IN (22556495, 22556507, 22556617 /* Agrega más admisiones aquí */);
+
+-- =CONCAT("WHEN ","IdAdmision = ",A370," THEN ","'",B370,"'")
+-- =CONCAT(A370,",")
